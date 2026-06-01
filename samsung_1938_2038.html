@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samsung: A História Completa 1938–2038</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&display=swap');
+
+:root {
+  --ink: #1a1209;
+  --ink-soft: #3d3020;
+  --paper: #faf6ee;
+  --paper-dark: #f0e9d8;
+  --paper-mid: #e8dfc8;
+  --gold: #b8860b;
+  --gold-light: #d4a841;
+  --gold-pale: #f5e6b8;
+  --red: #c0392b;
+  --teal: #1a6b5a;
+  --blue: #1a3a6b;
+  --purple: #4a1a6b;
+  --border: #c8b98a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* COVER */
+.cover {
+  background: linear-gradient(160deg, #0d0b07 55%, #2a1d05 100%);
+  color: var(--gold-pale);
+  padding: 70px 60px 80px;
+  text-align: center;
+  min-height: 420px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.cover::before {
+  content: '★  ★  ★';
+  font-size: 42px; color: var(--gold); letter-spacing: 20px;
+  display: block; margin-bottom: 28px; opacity: 0.75;
+}
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px; font-weight: 900; line-height: 1.0;
+  color: var(--gold-light); margin-bottom: 10px; letter-spacing: -2px;
+}
+.cover .subtitle {
+  font-size: 17px; font-weight: 300; color: var(--gold-pale);
+  opacity: 0.8; margin-bottom: 28px; letter-spacing: 3px; text-transform: uppercase;
+}
+.cover .tagline {
+  font-size: 15px; color: var(--gold-pale); opacity: 0.6;
+  max-width: 580px; line-height: 1.7; font-style: italic;
+}
+.cover .period-bg {
+  font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 900;
+  color: var(--gold); opacity: 0.12; position: absolute; bottom: 16px; right: 30px;
+  line-height: 1; pointer-events: none; letter-spacing: -3px;
+}
+
+/* NAV ERAS */
+.era-nav {
+  display: flex; flex-wrap: wrap; gap: 0;
+  background: var(--ink); overflow: hidden;
+}
+.era-nav a {
+  flex: 1; min-width: 110px; padding: 14px 10px;
+  text-align: center; color: var(--gold-pale); text-decoration: none;
+  font-size: 12px; letter-spacing: 1px; text-transform: uppercase;
+  border-right: 1px solid #333; font-weight: 600; transition: background 0.2s;
+}
+.era-nav a:last-child { border-right: none; }
+.era-nav a:hover { background: #2a2010; color: var(--gold-light); }
+.era-nav a span { display: block; font-size: 10px; opacity: 0.6; margin-top: 2px; font-weight: 400; }
+
+/* TOC */
+.toc {
+  background: var(--paper-dark); border: 1.5px solid var(--border);
+  padding: 40px 48px; margin: 48px 32px;
+}
+.toc h2 {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
+  color: var(--gold); margin-bottom: 28px; border-bottom: 1px solid var(--border);
+  padding-bottom: 12px; letter-spacing: 2px; text-transform: uppercase;
+}
+.toc-cols { columns: 3; gap: 32px; }
+.toc-item {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 5px 0; border-bottom: 1px dotted var(--border);
+  font-size: 13px; break-inside: avoid;
+}
+.toc-item a { color: var(--ink-soft); text-decoration: none; }
+.toc-item a:hover { color: var(--gold); }
+.toc-yr { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); font-size: 11px; }
+
+/* ERA DIVIDER */
+.era-div {
+  text-align: center; padding: 56px 32px 20px; position: relative;
+}
+.era-div::before {
+  content: ''; position: absolute; left: 32px; right: 32px; top: 80px;
+  height: 1px; background: var(--border);
+}
+.era-div .era-label {
+  background: var(--paper); display: inline-block; padding: 0 20px;
+  position: relative; font-family: 'Playfair Display', serif;
+  font-size: 11px; font-weight: 700; color: var(--gold);
+  letter-spacing: 3px; text-transform: uppercase;
+}
+.era-div .era-title {
+  font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 900;
+  color: var(--ink); margin-top: 10px; line-height: 1.2;
+}
+.era-div.future .era-title { color: var(--blue); }
+.era-div.future .era-label { color: var(--blue); }
+
+/* YEAR BLOCK */
+.yb { padding: 44px 32px; border-bottom: 1px solid var(--paper-mid); }
+.yb:last-child { border-bottom: none; }
+.yh { display: flex; align-items: flex-start; gap: 24px; margin-bottom: 24px; }
+.yn {
+  font-family: 'Playfair Display', serif; font-size: 60px; font-weight: 900;
+  color: var(--gold); opacity: 0.18; line-height: 1; min-width: 130px;
+  text-align: right; flex-shrink: 0; padding-top: 2px;
+}
+.yn.future { color: var(--blue); }
+.ytb { flex: 1; }
+.yt {
+  font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700;
+  color: var(--ink); line-height: 1.2; margin-bottom: 5px;
+}
+.ys { font-size: 12px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-weight: 600; }
+.ys.future { color: var(--blue); }
+
+/* CONTENT */
+.ct { padding-left: 154px; }
+.ct p { margin-bottom: 16px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.85; }
+.ct p:last-child { margin-bottom: 0; }
+.ct ul { margin: 10px 0 16px 20px; color: var(--ink-soft); font-size: 15px; line-height: 2; }
+
+/* EVENTS */
+.evs { padding-left: 154px; margin-top: 22px; }
+.ev { display: flex; gap: 16px; margin-bottom: 14px; align-items: flex-start; }
+.ed {
+  background: var(--gold); color: var(--paper);
+  font-family: 'Playfair Display', serif; font-size: 10px; font-weight: 700;
+  padding: 4px 9px; white-space: nowrap; letter-spacing: 0.5px;
+  flex-shrink: 0; margin-top: 3px;
+}
+.ed.future { background: var(--blue); }
+.ed.pred { background: var(--purple); }
+.et { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; }
+.et strong { color: var(--ink); }
+
+/* BOXES */
+.bx {
+  padding: 22px 26px; margin: 24px 0 24px 154px;
+  border-left: 4px solid;
+}
+.bx-c { background: var(--gold-pale); border-color: var(--gold); }
+.bx-f { background: #fdecea; border-color: var(--red); }
+.bx-s { background: #e8f4ef; border-color: var(--teal); }
+.bx-x { background: #edf2fa; border-color: var(--blue); }
+.bx-p { background: #f0eafa; border-color: var(--purple); }
+.bx-q { background: #f5f5f5; border-color: #888; }
+.bl {
+  font-size: 10px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+.bx-c .bl { color: var(--gold); }
+.bx-f .bl { color: var(--red); }
+.bx-s .bl { color: var(--teal); }
+.bx-x .bl { color: var(--blue); }
+.bx-p .bl { color: var(--purple); }
+.bx-q .bl { color: #555; }
+.bx p { font-size: 14px; line-height: 1.75; color: var(--ink-soft); margin-bottom: 0; }
+.bx p+p { margin-top: 8px; }
+
+/* PRODUCT GRID */
+.pg { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap: 14px; margin: 20px 0 20px 154px; }
+.pc { border: 1px solid var(--border); padding: 14px; background: var(--paper-dark); }
+.pn { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 13px; color: var(--ink); margin-bottom: 4px; }
+.py { font-size: 11px; color: var(--gold); font-weight: 700; margin-bottom: 4px; }
+.py.future { color: var(--blue); }
+.py.pred { color: var(--purple); }
+.pd { font-size: 12.5px; color: var(--ink-soft); line-height: 1.55; }
+
+/* TIMELINE */
+.tl { background: var(--paper-dark); border: 1px solid var(--border); padding: 36px; margin: 40px 32px; }
+.tl h3 {
+  font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 22px; text-transform: uppercase; letter-spacing: 2px;
+}
+.ti { display: flex; gap: 16px; margin-bottom: 10px; align-items: baseline; }
+.ty { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--gold); min-width: 55px; font-size: 13px; }
+.ty.future { color: var(--blue); }
+.ty.pred { color: var(--purple); }
+.td { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+.tdot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+.tdot.future { background: var(--blue); }
+.tdot.pred { background: var(--purple); }
+
+/* SOURCES */
+.srcs { background: var(--paper-dark); border-top: 2px solid var(--border); padding: 48px 32px; }
+.srcs h2 { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--ink); margin-bottom: 22px; }
+.srcs ul { list-style: none; }
+.srcs li { margin-bottom: 11px; font-size: 13.5px; color: var(--ink-soft); }
+.srcs a { color: var(--gold); text-decoration: none; word-break: break-all; }
+.srcs a:hover { text-decoration: underline; }
+
+footer {
+  background: var(--ink); color: var(--gold-pale);
+  text-align: center; padding: 32px; font-size: 12px; opacity: 0.85;
+}
+
+.pred-banner {
+  background: linear-gradient(90deg, #0d1b3e, #1a1a5e, #0d1b3e);
+  color: #aac4ff; padding: 16px 32px; text-align: center;
+  font-size: 13px; letter-spacing: 1px; border-top: 1px solid #2a3a7e; border-bottom: 1px solid #2a3a7e;
+}
+.pred-banner strong { color: #c4d8ff; }
+
+@media(max-width:720px){
+  .cover h1{font-size:38px;}
+  .yn{font-size:38px;min-width:90px;}
+  .ct{padding-left:106px;} .evs{padding-left:106px;} .bx{margin-left:106px;} .pg{margin-left:0;grid-template-columns:1fr 1fr;}
+  .toc-cols{columns:1;} .era-nav a{min-width:80px;font-size:10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <h1>SAMSUNG</h1>
+  <div class="subtitle">A História Centenária · 1938 → 2038</div>
+  <div class="tagline">De uma loja de peixe seco em Daegu a líder mundial em chips de IA — e as previsões para os próximos 12 anos. Um século de transformação tecnológica, escândalos, inovações e visão de futuro.</div>
+  <div class="period-bg">1938–2038</div>
+</div>
+
+<!-- NAV -->
+<nav class="era-nav">
+  <a href="#era1">Era I<span>1938–1945</span></a>
+  <a href="#era2">Era II<span>1947–1959</span></a>
+  <a href="#era3">Era III<span>1961–1968</span></a>
+  <a href="#era4">Era IV<span>1969–1978</span></a>
+  <a href="#era5">Era V<span>1979–1992</span></a>
+  <a href="#era6">Era VI<span>1993–2007</span></a>
+  <a href="#era7">Era VII<span>2008–2018</span></a>
+  <a href="#era8">Era VIII<span>2019–2026</span></a>
+  <a href="#era9">Era IX<span>2027–2038 ★</span></a>
+</nav>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>Índice Cronológico Completo</h2>
+  <div class="toc-cols">
+    <div class="toc-item"><a href="#y1938">1938 — Fundação em Daegu</a><span class="toc-yr">1938</span></div>
+    <div class="toc-item"><a href="#y1939">1939–45 — Sob ocupação japonesa</a><span class="toc-yr">1939</span></div>
+    <div class="toc-item"><a href="#y1947">1947 — Seul & parceria Hyosung</a><span class="toc-yr">1947</span></div>
+    <div class="toc-item"><a href="#y1950">1950–53 — Guerra da Coreia</a><span class="toc-yr">1950</span></div>
+    <div class="toc-item"><a href="#y1953">1953 — Cheil Sugar</a><span class="toc-yr">1953</span></div>
+    <div class="toc-item"><a href="#y1954">1954 — Cheil Mojik têxtil</a><span class="toc-yr">1954</span></div>
+    <div class="toc-item"><a href="#y1958">1958–60 — Bancos & seguros</a><span class="toc-yr">1958</span></div>
+    <div class="toc-item"><a href="#y1961">1961 — Golpe e acordo Park</a><span class="toc-yr">1961</span></div>
+    <div class="toc-item"><a href="#y1963">1963–65 — Mídia, varejo, petróleo</a><span class="toc-yr">1963</span></div>
+    <div class="toc-item"><a href="#y1966">1966 — Escândalo da sacarina</a><span class="toc-yr">1966</span></div>
+    <div class="toc-item"><a href="#y1969">1969 — Samsung Electronics</a><span class="toc-yr">1969</span></div>
+    <div class="toc-item"><a href="#y1970">1970 — 1ª TV Samsung</a><span class="toc-yr">1970</span></div>
+    <div class="toc-item"><a href="#y1973">1973 — TV Maha 506</a><span class="toc-yr">1973</span></div>
+    <div class="toc-item"><a href="#y1974">1974 — Chips & indústria pesada</a><span class="toc-yr">1974</span></div>
+    <div class="toc-item"><a href="#y1977">1977–78 — TV colorida, recordes</a><span class="toc-yr">1977</span></div>
+    <div class="toc-item"><a href="#y1979">1979–82 — Microondas & expansão global</a><span class="toc-yr">1979</span></div>
+    <div class="toc-item"><a href="#y1983">1983 — DRAM 64K e PC</a><span class="toc-yr">1983</span></div>
+    <div class="toc-item"><a href="#y1987">1987 — Lee Kun-hee assume</a><span class="toc-yr">1987</span></div>
+    <div class="toc-item"><a href="#y1993">1993 — "Nova Gestão" Frankfurt</a><span class="toc-yr">1993</span></div>
+    <div class="toc-item"><a href="#y1995">1995 — Queima dos celulares</a><span class="toc-yr">1995</span></div>
+    <div class="toc-item"><a href="#y1997">1997 — Crise asiática</a><span class="toc-yr">1997</span></div>
+    <div class="toc-item"><a href="#y2000">2000–05 — LCD, MP3 phone, OLED</a><span class="toc-yr">2000</span></div>
+    <div class="toc-item"><a href="#y2006">2006 — Líder global TVs</a><span class="toc-yr">2006</span></div>
+    <div class="toc-item"><a href="#y2009">2009 — Primeiro Galaxy (Android)</a><span class="toc-yr">2009</span></div>
+    <div class="toc-item"><a href="#y2012">2012 — Maior fabricante de celulares</a><span class="toc-yr">2012</span></div>
+    <div class="toc-item"><a href="#y2016">2016 — Note 7: desastre global</a><span class="toc-yr">2016</span></div>
+    <div class="toc-item"><a href="#y2019">2019 — Galaxy Fold: a dobra</a><span class="toc-yr">2019</span></div>
+    <div class="toc-item"><a href="#y2023">2023–26 — Galaxy AI & chips IA</a><span class="toc-yr">2023</span></div>
+    <div class="toc-item"><a href="#y2027">2027–30 — ★ Previsões futuras</a><span class="toc-yr">2027</span></div>
+    <div class="toc-item"><a href="#y2031">2031–38 — ★ Visão de longo prazo</a><span class="toc-yr">2031</span></div>
+  </div>
+</div>
+
+<!-- ===== ERA I ===== -->
+<div id="era1" class="era-div">
+  <span class="era-label">Era I · 1938–1945</span>
+  <div class="era-title">Nascimento em Terra Colonizada</div>
+</div>
+
+<div id="y1938" class="yb">
+  <div class="yh"><div class="yn">1938</div><div class="ytb"><div class="yt">Fundação da Samsung Sanghoe</div><div class="ys">1 de março de 1938 · Daegu, Coreia sob domínio japonês</div></div></div>
+  <div class="ct">
+    <p>Em 1º de março de 1938, Lee Byung-chul — 28 anos, filho de família proprietária de terras — abriu a <strong>Samsung Sanghoe</strong> (삼성상회) em Daegu com capital de <strong>30.000 wons</strong> (≈ US$ 25) e cerca de 40 funcionários. O negócio era comércio puro: peixe seco, macarrão e vegetais exportados para a Manchúria e Pequim. Nos registros japoneses da época — a Coreia era colônia do Japão desde 1910 — a empresa aparecia como <strong>"Mitsuboshi Trading Company"</strong> (tradução direta de Samsung). O nome Samsung (삼성) significa "Três Estrelas", escolhido para simbolizar grandeza, força e permanência eterna.</p>
+    <p>Lee havia tentado antes com um moinho de arroz, que faliu. A Samsung foi seu recomeço calculado. Sua passagem pelo Japão para estudar na Universidade Waseda, embora sem concluir o curso, foi fundamental: lá observou os <strong>zaibatsu</strong> japoneses — conglomerados familiares verticalmente integrados. Ele queria criar o equivalente coreano.</p>
+  </div>
+  <div class="bx bx-c" style="margin-left:154px;"><div class="bl">★ Curiosidade</div><p>Nos registros coloniais japoneses, a Samsung aparecia como "Mitsuboshi" — "três estrelas" em japonês, idêntico ao significado em coreano. A mesma palavra que nomeia uma das maiores montadoras japonesas hoje (Mitsubishi = "três losangos/diamantes") carregava uma ressonância simbólica poderosa para Lee. Ele queria construir algo tão duradouro quanto os conglomerados que via no Japão — só que para a Coreia.</p></div>
+</div>
+
+<div id="y1939" class="yb">
+  <div class="yh"><div class="yn">1939–1945</div><div class="ytb"><div class="yt">Sobrevivência sob a ocupação da Segunda Guerra</div><div class="ys">Controles coloniais · Economia de guerra</div></div></div>
+  <div class="ct">
+    <p>A eclosão da Segunda Guerra Mundial impôs controles rígidos sobre empresas coreanas. O regime japonês exigiu que negócios locais contribuíssem com o esforço de guerra — matérias-primas eram escassas e canais de exportação, controlados. A Samsung sobreviveu operando no básico e desenvolvendo relações políticas essenciais para o futuro.</p>
+    <p>A libertação em <strong>agosto de 1945</strong>, com a rendição do Japão, abriu uma janela histórica: o país estava destruído, mas a demanda por tudo era imensurável. Lee começou a planejar sua expansão imediata.</p>
+  </div>
+</div>
+
+<!-- ===== ERA II ===== -->
+<div id="era2" class="era-div">
+  <span class="era-label">Era II · 1947–1959</span>
+  <div class="era-title">Reconstrução e Diversificação Nacional</div>
+</div>
+
+<div id="y1947" class="yb">
+  <div class="yh"><div class="yn">1947</div><div class="ytb"><div class="yt">Seul, Samsung Mulsan & parceria com Cho Hong-jai</div><div class="ys">Transferência da sede · Samsung Trading Corporation</div></div></div>
+  <div class="ct">
+    <p>A Samsung transferiu sua sede de Daegu para <strong>Seul</strong> em 1947. No mesmo ano, Lee Byung-chul formou uma parceria com <strong>Cho Hong-jai</strong> — fundador do que viria a ser o Grupo Hyosung — para criar a <strong>Samsung Mulsan Gongsa</strong> (Samsung Trading Corporation). A parceria era ambiciosa, mas terminou em desentendimento: Cho queria 30% do grupo, Lee não aceitou. A separação gerou dois dos maiores chaebols da Coreia. A Samsung Trading evoluiu para a atual <strong>Samsung C&T Corporation</strong>.</p>
+  </div>
+</div>
+
+<div id="y1950" class="yb">
+  <div class="yh"><div class="yn">1950–1953</div><div class="ytb"><div class="yt">Guerra da Coreia — caos, fuga e oportunidade</div><div class="ys">Invasão norte-coreana · Reestabelecimento em Busan</div></div></div>
+  <div class="ct">
+    <p>Em junho de 1950, a invasão norte-coreana forçou Lee a abandonar Seul — a Samsung Trading já era uma das 10 maiores do país. Reestabelecida em <strong>Busan</strong>, a empresa cresceu durante o conflito: demanda por suprimentos era insaciável. Lee percebeu que o pós-guerra exigiria açúcar, roupas e materiais de construção em escala massiva — e se posicionou antes de todos os concorrentes.</p>
+  </div>
+  <div class="bx bx-q"><div class="bl">Contexto histórico</div><p>A Guerra da Coreia matou mais de 2,5 milhões de pessoas e destruiu a infraestrutura do Sul. O PIB per capita coreano em 1953 era menor que o de muitos países africanos. Os chaebols como a Samsung seriam os instrumentos da reconstrução — com apoio estatal explícito. Esse modelo de capitalismo guiado pelo Estado definiria a Coreia por décadas.</p></div>
+</div>
+
+<div id="y1953" class="yb">
+  <div class="yh"><div class="yn">1953</div><div class="ytb"><div class="yt">Cheil Sugar — Primeira refinaria de açúcar da Coreia</div><div class="ys">Busan · Diversificação industrial pós-guerra</div></div></div>
+  <div class="ct"><p>Com o armistício assinado em julho de 1953, Lee fundou a <strong>Cheil Sugar Manufacturing</strong> (제일제당) — a primeira refinaria de açúcar do país. "Cheil" significa "primeiro" — e foi exatamente isso: o pioneiro num mercado faminto por bens básicos. Lucrativa desde o início, a Cheil Sugar financiou toda a expansão têxtil seguinte. Hoje existe como <strong>CJ Cheil Jedang</strong>, um dos maiores grupos de alimentos da Ásia — separado da Samsung nos anos 1990.</p></div>
+  <div class="bx bx-s"><div class="bl">✓ Tecnologia que Vingou</div><p>A refinação de açúcar numa Coreia destruída pela guerra foi uma das apostas mais bem-sucedidas de Lee. Ao controlar a produção de um bem básico de altíssima demanda com tecnologia industrial moderna, a Samsung criou uma "cash machine" que financiou toda a diversificação subsequente — do têxtil à eletrônica.</p></div>
+</div>
+
+<div id="y1954" class="yb">
+  <div class="yh"><div class="yn">1954</div><div class="ytb"><div class="yt">Cheil Mojik — A maior tecelagem de lã da Coreia</div><div class="ys">15 set 1954 · Chimsan-dong, Daegu · Integração vertical total</div></div></div>
+  <div class="ct"><p>Com o caixa da Cheil Sugar, Lee fundou a <strong>Cheil Mojik</strong> em Daegu — a maior tecelagem de lã já construída no país. A fábrica aplicou <strong>integração vertical completa</strong>: da lã crua importada ao tecido acabado, tudo sob controle Samsung. Por volta de 1960, a divisão respondia por <strong>40% das exportações têxteis coreanas</strong>. Em 1961, a Cheil exportou 3.000 libras de lã cardada (marca Jangmi) para Hong Kong — primeira exportação têxtil internacional do grupo.</p></div>
+  <div class="bx bx-s"><div class="bl">✓ Estratégia que Definiu o Futuro</div><p>A integração vertical aplicada na Cheil Mojik nos anos 1950 era décadas à frente de seu tempo no contexto coreano. Samsung replicaria essa mesma lógica em semicondutores e telas décadas depois: controlar toda a cadeia, da matéria-prima ao produto final. Hoje a Samsung é a única empresa do mundo capaz de produzir praticamente todos os componentes de um smartphone internamente.</p></div>
+</div>
+
+<div id="y1958" class="yb">
+  <div class="yh"><div class="yn">1958–1960</div><div class="ytb"><div class="yt">Bancos, seguros, cimento e fertilizantes</div><div class="ys">Protecionismo estatal · Aquisições estratégicas</div></div></div>
+  <div class="ct"><p>No final dos anos 1950, sob o protecionismo do governo Rhee Syng-man, a Samsung adquiriu participações em <strong>três dos maiores bancos comerciais coreanos</strong> e comprou a <strong>Ankuk Fire & Marine Insurance</strong> (futura Samsung Fire & Marine Insurance). Também entrou em produção de cimento e fertilizantes. Lee Byung-chul era, por algumas métricas, o homem mais rico da Coreia do Sul.</p></div>
+  <div class="evs">
+    <div class="ev"><div class="ed">1958</div><div class="et"><strong>Ankuk Fire & Marine Insurance</strong> adquirida — pilar do setor financeiro (futura Samsung Fire & Marine).</div></div>
+    <div class="ev"><div class="ed">1958–59</div><div class="et">Controle de <strong>3 grandes bancos comerciais coreanos</strong> — poder financeiro sem precedente para um único empresário.</div></div>
+  </div>
+</div>
+
+<!-- ===== ERA III ===== -->
+<div id="era3" class="era-div">
+  <span class="era-label">Era III · 1961–1968</span>
+  <div class="era-title">Política, Escândalos e a Virada para Eletrônica</div>
+</div>
+
+<div id="y1961" class="yb">
+  <div class="yh"><div class="yn">1961</div><div class="ytb"><div class="yt">Golpe de Park Chung-hee — o grande acordo chaebol</div><div class="ys">Crise política · Modelo chaebol definido para sempre</div></div></div>
+  <div class="ct"><p>O General <strong>Park Chung-hee</strong> tomou o poder em maio de 1961 com uma campanha anticorrupção. Lee Byung-chul, o homem mais rico do país, estava no Japão e recusou-se a retornar. Depois de negociações tensas, voltou e fechou o <strong>acordo histórico</strong> que definiu o modelo chaebol: a Samsung entregava o controle dos bancos e da planta de fertilizantes ao governo, mas recebia apoio explícito para crescer em novas indústrias. Era um capitalismo de Estado disfarçado de livre mercado.</p></div>
+  <div class="bx bx-q"><div class="bl">Contexto histórico</div><p>Esse modelo — chaebols crescendo sob orientação estatal, com financiamento subsidiado, proteção da concorrência estrangeira e metas de exportação — foi a espinha dorsal do "Milagre do Rio Han": o crescimento de 9% ao ano por quase 3 décadas que transformou a Coreia numa das economias mais ricas do mundo. Samsung foi o chaebol-modelo desse sistema.</p></div>
+</div>
+
+<div id="y1963" class="yb">
+  <div class="yh"><div class="yn">1963–1965</div><div class="ytb"><div class="yt">Mídia, varejo e petróleo</div><div class="ys">DongBang Life · Shinsegae · TBC · Refino de petróleo</div></div></div>
+  <div class="ct"><p>A Samsung adquiriu a <strong>DongBang Life Insurance</strong> (futura Samsung Life Insurance) em 1963. A divisão de varejo <strong>Shinsegae</strong> foi fundada — pioneira no sistema de preço fixo no comércio coreano. Em 1964, a Samsung fundou a <strong>TBC (Tongyang Broadcasting Company)</strong>, emissora de rádio e TV, e entrou no refino de petróleo e produção de nylon via joint ventures. Em 1966, fundou a Joong-Ang Development (hoje Samsung Everland — parque temático e resort).</p></div>
+</div>
+
+<div id="y1966" class="yb">
+  <div class="yh"><div class="yn">1966</div><div class="ytb"><div class="yt">O Escândalo da Sacarina — a maior crise da era Lee Byung-chul</div><div class="ys">Contrabando · Demissão · Crise de sucessão</div></div></div>
+  <div class="ct">
+    <p>Em 1966, fiscais aduaneiros em Busan descobriram que a Korea Fertilizer Co. (Samsung) havia contrabandeado <strong>55 toneladas de sacarina</strong> para o país, disfarçadas de insumos de construção. O esquema vendia a substância a uma empresa de adoçante controlada pela família Lee, lucrando a diferença. O presidente Park Chung-hee ordenou investigação. Um deputado da oposição jogou uma lata de dejetos no plenário do parlamento gritando "comam essa sacarina!" — cena gravada na memória coreana.</p>
+    <p>O <strong>segundo filho</strong> de Lee, Lee Chang-hee, assumiu a culpa e foi preso por meses. Lee Byung-chul se demitiu formalmente e cedeu 51% da planta ao governo para evitar processos maiores. A crise alterou a <strong>linha de sucessão</strong>: o filho mais velho tentou assumir mas causou caos em 6 meses. O segundo filho, ao sair da prisão, delatou o pai ao governo sobre fundos secretos — e foi exilado para os EUA. Décadas depois, o <strong>terceiro filho, Lee Kun-hee</strong>, seria escolhido como sucessor.</p>
+  </div>
+  <div class="bx bx-f"><div class="bl">✗ Estratégia que Fracassou</div><p>O contrabando de sacarina foi politicamente catastrófico. A Samsung perdeu a planta de fertilizantes — um ativo estratégico — e sofreu dano de imagem severo. Lee Byung-chul nunca mais arriscou atividades ilegais em larga escala. O episódio também inspirou o K-drama <strong>"Reborn Rich" (재벌집 막내아들, 2022)</strong>, um dos mais assistidos da história coreana.</p></div>
+</div>
+
+<!-- ===== ERA IV ===== -->
+<div id="era4" class="era-div">
+  <span class="era-label">Era IV · 1969–1978</span>
+  <div class="era-title">A Revolução Eletrônica — Nasce a Potência Tecnológica</div>
+</div>
+
+<div id="y1969" class="yb">
+  <div class="yh"><div class="yn">1969</div><div class="ytb"><div class="yt">Samsung Electronics nasce — a decisão que mudou tudo</div><div class="ys">13 de janeiro de 1969 · Suwon · Joint venture com Sanyo</div></div></div>
+  <div class="ct">
+    <p>Em <strong>13 de janeiro de 1969</strong>, foi fundada a Samsung Electronics Co., Ltd. em Suwon. Lee observara o boom eletrônico japonês nos anos 1960 e não queria ser espectador. A empreitada gerou protestos: parceria com empresas <strong>japonesas</strong> — os ex-colonizadores — era politicamente explosivo. Lee contornou argumentando que a Samsung focaria exclusivamente em exportações. <strong>Toshio Iue</strong>, fundador da Sanyo e cunhado de Lee, foi conselheiro pessoal. Em dezembro de 1969, o joint venture <strong>Samsung-Sanyo Electric</strong> foi formado com Sanyo e Sumitomo.</p>
+    <p>Quatro divisões foram criadas simultaneamente: <strong>Samsung Electronics Devices</strong> (tubos de imagem), <strong>Samsung Electro-Mechanics</strong> (componentes), <strong>Samsung Corning</strong> (vidros CRT, JV com a Corning americana) e <strong>Samsung Semiconductor & Telecommunications</strong>.</p>
+  </div>
+  <div class="bx bx-c"><div class="bl">★ Curiosidade</div><p>Em 1969, o PIB per capita da Coreia do Sul era inferior a US$ 200 — similar ao de países em guerra. A ideia de competir com RCA, Philips, Panasonic ou Sony parecia fantasia pura. Mas o governo Park forçou fabricantes estrangeiros de telecomunicações a transferirem tecnologia de semicondutores em troca de acesso ao mercado coreano. Esse "imperialismo às avessas" foi crucial para Samsung.</p></div>
+</div>
+
+<div id="y1970" class="yb">
+  <div class="yh"><div class="yn">1970–1972</div><div class="ytb"><div class="yt">Primeiro televisor · Exportação para o Panamá · Fábrica expandida</div><div class="ys">Nov 1970: TV P-3202 · Jan 1971: Exportação · Capacidade: 480 mil TVs/ano</div></div></div>
+  <div class="ct"><p>Em <strong>novembro de 1970</strong>, a Samsung produziu seu primeiro televisor: o <strong>P-3202</strong>, 12 polegadas, tubo de vácuo, preto e branco — tecnologia Sanyo. Em <strong>janeiro de 1971</strong>, dois meses depois, já havia exportado <strong>500 unidades para o Panamá</strong>. Em 1971, a Samsung Electrics foi fundada para P&D. Em outubro de 1972, fábricas de calculadoras e nova linha de TVs foram concluídas, com capacidade anual de <strong>480.000 televisores</strong>.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py">NOV 1970</div><div class="pn">TV P-3202 (12")</div><div class="pd">Primeiro TV Samsung. Tubo de vácuo, P&B. Tecnologia Sanyo. Exportado ao Panamá em 2 meses.</div></div>
+  </div>
+</div>
+
+<div id="y1973" class="yb">
+  <div class="yh"><div class="yn">1973</div><div class="ytb"><div class="yt">TV Maha 506 — Primeiro sucesso genuíno Samsung</div><div class="ys">Abril 1973 · Transistorizada, 19" · Hit de vendas no país</div></div></div>
+  <div class="ct"><p>Em abril de 1973, a Samsung lançou a <strong>TV Maha 506</strong> — 19 polegadas, transistorizada (sem tubo de vácuo), com participação crescente de engenheiros coreanos. O Maha 506 quebrou a desconfiança do consumidor coreano em relação a eletrônicos nacionais, tornando-se um sucesso de vendas sensacional. Foi o primeiro momento em que o consumidor escolheu Samsung em vez de marcas japonesas.</p></div>
+  <div class="bx bx-s"><div class="bl">✓ Produto que Definiu uma Geração</div><p>O Maha 506 foi o primeiro grande sucesso psicológico da Samsung: convenceu os coreanos de que produtos nacionais podiam ser tão bons quanto os japoneses. Sem essa virada de percepção, toda a trajetória da Samsung Electronics seria mais lenta e difícil.</p></div>
+</div>
+
+<div id="y1974" class="yb">
+  <div class="yh"><div class="yn">1974</div><div class="ytb"><div class="yt">Ano decisivo: semicondutores, geladeiras e indústria pesada</div><div class="ys">O pivô que determinou o futuro tecnológico</div></div></div>
+  <div class="ct"><p>1974 foi o ano mais importante da Samsung até então. A empresa adquiriu <strong>50% da Korea Semiconductor</strong> (Hankook Semiconductor) — entrada no mercado de chips. Em <strong>fevereiro</strong>, lançou a <strong>geladeira SR-180</strong>, primeira frost-free da Coreia. Em <strong>maio</strong>, os primeiros ar-condicionados domésticos Samsung. Em <strong>agosto</strong>, foi fundada a <strong>Samsung Heavy Industries</strong> (Changwon) — futura líder em construção naval. A <strong>Samsung Petrochemical</strong> também nasceu. E as fábricas atingiram o marco de <strong>1 milhão de TVs produzidas</strong>.</p></div>
+  <div class="evs">
+    <div class="ev"><div class="ed">1974</div><div class="et"><strong>Aquisição de 50% da Korea Semiconductor</strong> — a jogada mais importante da história Samsung. Semente de um império de chips.</div></div>
+    <div class="ev"><div class="ed">FEV 1974</div><div class="et"><strong>Geladeira SR-180</strong> — primeira frost-free da Coreia. Desenvolvida com Sanyo.</div></div>
+    <div class="ev"><div class="ed">5 AGO 1974</div><div class="et"><strong>Samsung Heavy Industries</strong> fundada em Changwon — futura líder mundial em estaleiros.</div></div>
+    <div class="ev"><div class="ed">1974</div><div class="et">Marco histórico: <strong>1 millionésimo televisor</strong> produzido.</div></div>
+  </div>
+  <div class="bx bx-s"><div class="bl">✓ A Jogada Mais Importante da História Samsung</div><p>A aquisição da Korea Semiconductor em 1974 por um valor pequeno foi classificada como arriscada demais na época — a empresa era deficitária e tecnologicamente atrasada. Mas Lee Byung-chul viu o futuro: chips seriam o coração de toda a indústria eletrônica. Cinquenta anos depois, a Samsung é o maior produtor de chips de memória DRAM do planeta.</p></div>
+</div>
+
+<div id="y1977" class="yb">
+  <div class="yh"><div class="yn">1977–1978</div><div class="ytb"><div class="yt">TV colorida, microondas e recorde mundial de produção</div><div class="ys">4 milhões de TVs em um ano — primeiro no mundo</div></div></div>
+  <div class="ct"><p>Em <strong>1977</strong>, a Samsung iniciou a produção de <strong>televisores coloridos</strong> (salto tecnológico significativo) e fundou a Samsung Construction e a Samsung Precision Co. (hoje Samsung Techwin). Em <strong>1978</strong>, estabeleceu o <strong>recorde mundial</strong>: <strong>4 milhões de televisores produzidos em um único ano</strong> — superando Philips, Panasonic e RCA. A <strong>Samsung Semiconductor and Telecommunications Co.</strong> foi separada como entidade própria para focar exclusivamente em chips. Uma divisão aeroespacial também foi criada.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py">1977</div><div class="pn">TV Colorida Samsung</div><div class="pd">Primeiro televisor colorido. Exigiu tubos CRT coloridos, circuitos de cor e novos componentes de alta precisão.</div></div>
+    <div class="pc"><div class="py">1977–79</div><div class="pn">Forno Micro-ondas</div><div class="pd">Desenvolvido a partir de 1977, entrou em produção de massa em 1979 e conquistou o mercado americano com preços agressivos.</div></div>
+  </div>
+</div>
+
+<!-- ===== ERA V ===== -->
+<div id="era5" class="era-div">
+  <span class="era-label">Era V · 1979–1992</span>
+  <div class="era-title">A Era dos Chips — Samsung Entra na Liga dos Grandes</div>
+</div>
+
+<div id="y1979" class="yb">
+  <div class="yh"><div class="yn">1979–1982</div><div class="ytb"><div class="yt">Microondas conquistam os EUA · Expansão global de fábricas</div><div class="ys">Portugal, Nova York · Primeiro celular (carro) · DRAM em preparação</div></div></div>
+  <div class="ct"><p>Em <strong>1979</strong>, a Samsung iniciou a produção em massa de fornos de micro-ondas, que rapidamente conquistaram o mercado americano com preços muito abaixo dos concorrentes. Em <strong>1982</strong>, abriu a primeira fábrica no exterior em <strong>Portugal</strong> (seguida por Nova York em 1984 e Inglaterra em 1987). Em <strong>1982</strong>, obteve licença de tecnologia para DRAM 64K da <strong>Micron Technology</strong> (EUA). O <strong>SPC-1000</strong>, primeiro computador pessoal doméstico fabricado na Coreia, foi lançado em 1982. E em 1988, a Samsung lançou o <strong>SH-100</strong> — seu primeiro telefone analógico, para veículos, voltado ao mercado coreano.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py">1979</div><div class="pn">Micro-ondas Samsung</div><div class="pd">Produção em massa iniciada. Hit nos EUA pelo custo-benefício. Gerou acusações de dumping de fabricantes americanos.</div></div>
+    <div class="pc"><div class="py">1982</div><div class="pn">SPC-1000</div><div class="pd">Primeiro computador pessoal doméstico da Coreia. Marco no início da era digital coreana.</div></div>
+    <div class="pc"><div class="py">1988</div><div class="pn">SH-100 (Carro)</div><div class="pd">Primeiro telefone Samsung. Analógico, instalado em veículos. Início tímido de uma divisão que dominaria o mundo.</div></div>
+  </div>
+</div>
+
+<div id="y1983" class="yb">
+  <div class="yh"><div class="yn">1983–1986</div><div class="ytb"><div class="yt">DRAM 64K: Coreia entra na era dos semicondutores</div><div class="ys">Dez 1983 · Tecnologia da Micron e Sharp · DRAM 256K em 7 meses</div></div></div>
+  <div class="ct">
+    <p>Em <strong>dezembro de 1983</strong>, com tecnologia licenciada da Micron (EUA) e Sharp (Japão) — obtida graças ao governo coreano que forçou empresas estrangeiras a transferirem know-how em troca de acesso ao mercado —, a Samsung tornou-se o <strong>terceiro fabricante mundial</strong> de DRAM 64K, após EUA e Japão. Isso reduziu o gap tecnológico da Coreia de mais de 10 anos para apenas 3 anos.</p>
+    <p>Apenas <strong>3 meses depois</strong>, a Samsung desenvolveu o DRAM <strong>256K</strong> — conquistado por apenas algumas empresas como Intel, Fujitsu e NEC. Sete meses depois do 64K inicial, iniciou-se a <strong>produção em massa do 256K</strong>. Em <strong>1986</strong>, a Samsung desenvolveu o <strong>DRAM de 1 Megabit</strong> — apenas a terceira empresa do mundo a conseguir. Em outubro de 1986, lançou o projeto do DRAM de 4 Megabits.</p>
+  </div>
+  <div class="bx bx-s"><div class="bl">✓ A Virada Tecnológica Definitiva</div><p>O DRAM 64K de 1983 é o marco que transformou a Samsung de fabricante de eletrônicos de consumo em potência de semicondutores. A velocidade com que saltou de 64K para 256K em 3 meses — enquanto concorrentes levavam anos — revelou a ferocidade do modelo de desenvolvimento coreano: engenheiros trabalhando em múltiplos turnos, pressão máxima, investimento pesado e urgência nacional. Entre 1977 e 1987, as receitas anuais do grupo Samsung saltaram de US$ 1,3 bilhão para <strong>US$ 24 bilhões</strong> — 20% do PIB inteiro da Coreia do Sul.</p></div>
+</div>
+
+<div id="y1987" class="yb">
+  <div class="yh"><div class="yn">1987–1992</div><div class="ytb"><div class="yt">Lee Kun-hee assume · DRAM 4M e 16M · Líder mundial em memória</div><div class="ys">Morte do fundador · Nova liderança · Domínio em chips</div></div></div>
+  <div class="ct">
+    <p>Lee Byung-chul morreu em <strong>19 de novembro de 1987</strong> — de câncer de pulmão — aos 77 anos, depois de quase 50 anos à frente da empresa. 25 minutos após sua morte, o terceiro filho, <strong>Lee Kun-hee</strong>, assumiu como novo presidente. Era 1987 — e a Samsung, enquanto forte em chips e eletrodomésticos, ainda era vista globalmente como fabricante de segunda linha, aquém de Sony, Philips ou Panasonic.</p>
+    <p>Em <strong>1988</strong>, a Samsung Semiconductor and Telecommunications foi fundida de volta à Samsung Electronics. Em <strong>1992</strong>, a Samsung se tornou o <strong>maior produtor mundial de chips de memória</strong>, ultrapassando japoneses e americanos. A Samsung também lançou em 1992 seu primeiro telefone celular portátil para o mercado comercial coreano.</p>
+  </div>
+  <div class="bx bx-c"><div class="bl">★ Curiosidade</div><p>Quando Lee Kun-hee assumiu em 1987, a Samsung era tão desconhecida internacionalmente que os vendedores americanos de lojas de varejo as chamavam de "aquelas TVs e micro-ondas baratos que chegam da Coreia." Nos EUA, a Samsung vendia sob <strong>marca branca</strong> — seus produtos eram rotulados com marcas de outras empresas. Menos de 20 anos depois, a Samsung seria a marca mais valiosa de eletrônicos do mundo.</p></div>
+</div>
+
+<!-- ===== ERA VI ===== -->
+<div id="era6" class="era-div">
+  <span class="era-label">Era VI · 1993–2007</span>
+  <div class="era-title">Da "Segunda Linha" à Liderança Global</div>
+</div>
+
+<div id="y1993" class="yb">
+  <div class="yh"><div class="yn">1993</div><div class="ytb"><div class="yt">"Nova Gestão" — Frankfurt, 7 de junho de 1993</div><div class="ys">A frase que mudou a Samsung: "Mude tudo, exceto sua esposa e filhos"</div></div></div>
+  <div class="ct">
+    <p>Em <strong>7 de junho de 1993</strong>, Lee Kun-hee reuniu executivos seniores em Frankfurt e fez um discurso que durou mais de 10 horas. Ele declarou que a Samsung era "segunda linha" globalmente — e que isso era inadmissível. A frase icônica: <strong>"Mude tudo, exceto sua esposa e seus filhos."</strong> Essa declaração de "Nova Gestão" (신경영) redirecionou toda a empresa de uma mentalidade de <strong>volume para qualidade</strong>, de fabricante barato para inovador global.</p>
+    <p>Lee passou 68 dias visitando operações em 8 cidades de 5 países para observar como a Samsung era percebida lá fora. O que viu o chocou: produtos Samsung empilhados em prateleiras de segunda categoria, ao lado de marcas desconhecidas. Era inadmissível para um homem que queria superar a Sony.</p>
+  </div>
+  <div class="bx bx-s"><div class="bl">✓ A Declaração que Redefiniu uma Empresa</div><p>A "Nova Gestão" de 1993 é considerada o ponto de virada mais importante da história moderna da Samsung. Foi ela que lançou a empresa na corrida por qualidade, design e inovação que resultaria na liderança global em semiconductores, TVs e smartphones. As vendas do grupo saltaram de 9,9 trilhões de wons em 1987 para 386 trilhões em 2018 — um crescimento de <strong>39 vezes</strong>.</p></div>
+</div>
+
+<div id="y1995" class="yb">
+  <div class="yh"><div class="yn">1995</div><div class="ytb"><div class="yt">A Queima dos Celulares — choque terapêutico legendário</div><div class="ys">150.000 Anycall destruídos · Valor: 50 bilhões de wons · 2.000 funcionários assistindo</div></div></div>
+  <div class="ct"><p>Em <strong>março de 1995</strong>, após receber reclamações sobre a qualidade dos celulares Anycall, Lee Kun-hee tomou uma decisão radical: ordenou que <strong>150.000 telefones defeituosos</strong> (valor aproximado: 50 bilhões de wons = US$ 44 milhões) fossem reunidos no estádio da fábrica de Gumi e incinerados na frente de cerca de <strong>2.000 funcionários</strong>. Muitos choraram. Todos entenderam a mensagem: qualidade antes de quantidade, sempre.</p></div>
+  <div class="bx bx-c"><div class="bl">★ Curiosidade — O "Choque da Colher"</div><p>Um episódio anterior ao da queima: quando executivos tentaram convencer Lee a equilibrar qualidade e quantidade, ele jogou uma colher de chá na mesa e saiu da reunião sem falar nada. Os executivos ficaram com as caras pálidas. Esse "incidente da colher" ficou famoso internamente como o momento em que ficou claro que Lee não toleraria relativizações de qualidade. A queima dos celulares foi a demonstração pública desse princípio.</p></div>
+</div>
+
+<div id="y1997" class="yb">
+  <div class="yh"><div class="yn">1997–1999</div><div class="ytb"><div class="yt">Crise Asiática & Samsung Motors — aposta que falhou</div><div class="ys">FMI · Reestruturação forçada · Saída do setor automotivo</div></div></div>
+  <div class="ct"><p>A Crise Financeira Asiática de 1997 forçou a Coreia a aceitar um pacote do FMI. A Samsung teve que reestruturar ativos e vender divisões não essenciais. A <strong>Samsung Motors</strong> — fundada em 1995 com uma planta enorme em Busan — havia sido a maior aposta pessoal de Lee Kun-hee. O problema: a Samsung produzia carros com prejuízo de 1,5 milhão de wons por unidade. Com a crise e a falência da Kia Motors, o governo exigiu uma decisão. A Samsung Motors entrou em recuperação judicial e foi adquirida pela <strong>Renault em 2000</strong> (hoje Renault Korea). Lee cedeu 3,5 milhões de ações da Samsung Life Insurance como compensação para credores.</p></div>
+  <div class="bx bx-f"><div class="bl">✗ Aposta que Fracassou — Samsung Motors</div><p>A Samsung Motors foi o maior fracasso pessoal de Lee Kun-hee. A empresa perdeu bilhões, não tinha DNA automotivo, enfrentou resistência dos sindicatos e foi esmagada pela crise asiática. A ironia: a Renault Korea (sucessora) existe até hoje e produz carros com bom desempenho no mercado — mas sem o nome Samsung. Décadas depois, a Samsung entrou no setor automotivo por um caminho diferente: fornecendo chips para carros, não fabricando os veículos.</p></div>
+</div>
+
+<div id="y2000" class="yb">
+  <div class="yh"><div class="yn">2000–2007</div><div class="ytb"><div class="yt">LCD, OLED, MP3 phone e liderança global em TVs</div><div class="ys">Da recuperação à dominância · Primeira LCD (1995) · Maior TV LCD (2004)</div></div></div>
+  <div class="ct"><p>A Samsung lançou sua primeira tela LCD em <strong>1995</strong> e rapidamente se tornou a maior fabricante de painéis LCD do mundo. Em <strong>1998</strong>, lançou o primeiro DRAM de 64 Megabits e a primeira <strong>TV digital</strong> do mundo. Em <strong>2000</strong>, a Samsung tornou-se líder em chips DRAM, SRAM e monitores coloridos. O telefone celular <strong>SPH-M2500</strong>, lançado em 2003, foi o primeiro celular com leitor de MP3 do mundo. Em <strong>2004</strong>, lançou a maior TV LCD do mundo. Em <strong>2005</strong>, o primeiro celular com reconhecimento de voz. A Samsung foi <strong>patrocinadora oficial dos Jogos Olímpicos de Sydney 2000</strong> — colocando-a no centro do mundo.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py">1995</div><div class="pn">Primeira LCD Samsung</div><div class="pd">Início da liderança em displays. Samsung dominaria o mercado de painéis LCD por décadas.</div></div>
+    <div class="pc"><div class="py">1998</div><div class="pn">DRAM 64Mb + TV Digital</div><div class="pd">Primeiro DRAM de 64Mb e primeira TV digital do mundo — dupla inovação num único ano.</div></div>
+    <div class="pc"><div class="py">2003</div><div class="pn">Celular MP3 (SPH-M2500)</div><div class="pd">Primeiro telefone do mundo com player de MP3 integrado — lançado 4 anos antes do iPhone.</div></div>
+    <div class="pc"><div class="py">2004</div><div class="pn">Maior TV LCD do Mundo</div><div class="pd">46" LCD — recorde mundial na época. Samsung consolidou liderança em displays grandes.</div></div>
+  </div>
+</div>
+
+<div id="y2006" class="yb">
+  <div class="yh"><div class="yn">2006</div><div class="ytb"><div class="yt">Maior fabricante de TVs do mundo — posto mantido desde então</div><div class="ys">Liderança ininterrupta em TVs desde 2006</div></div></div>
+  <div class="ct"><p>Desde <strong>2006</strong>, a Samsung é ininterruptamente o maior fabricante de televisores do mundo — um posto que nenhum concorrente conseguiu tirar em quase 20 anos. A empresa domina desde TVs de entrada até os modelos QLED, OLED e MicroLED premium. A liderança em displays foi construída sobre décadas de investimento em LCD, OLED e semicondutores de imagem.</p></div>
+</div>
+
+<!-- ===== ERA VII ===== -->
+<div id="era7" class="era-div">
+  <span class="era-label">Era VII · 2008–2018</span>
+  <div class="era-title">A Era Galaxy — Samsung Reinventa o Celular</div>
+</div>
+
+<div id="y2009" class="yb">
+  <div class="yh"><div class="yn">2009–2011</div><div class="ytb"><div class="yt">Nasce o Galaxy — Samsung entra na era dos smartphones Android</div><div class="ys">2009: i7500 Galaxy · 2010: Galaxy S Super AMOLED · 2011: Galaxy S II</div></div></div>
+  <div class="ct">
+    <p>Em <strong>2009</strong>, a Samsung lançou o <strong>Samsung i7500 Galaxy</strong> — seu primeiro smartphone Android, com tela de 3,2 polegadas, 8GB de armazenamento e câmera de 5 megapixels. Era uma resposta ao iPhone (2007) e um teste de mercado.</p>
+    <p>Em <strong>2010</strong>, o <strong>Galaxy S</strong> foi lançado com a revolucionária tela <strong>Super AMOLED</strong> e tornou-se um sucesso global. A Samsung havia desenvolvido a tecnologia AMOLED internamente — e a qualidade da tela era um diferencial claro frente a qualquer concorrente.</p>
+    <p>Em <strong>2011</strong>, o <strong>Galaxy S II</strong> consolidou a Samsung como rival direto da Apple. No mesmo ano, a Samsung também lançou o <strong>Galaxy Note</strong> — criando a categoria dos "phablets" (entre telefone e tablet) que todos ridicularizaram e depois imitaram.</p>
+  </div>
+  <div class="pg">
+    <div class="pc"><div class="py">2009</div><div class="pn">Samsung Galaxy (i7500)</div><div class="pd">Primeiro smartphone Android Samsung. 3,2", Android 1.5. O início de uma era.</div></div>
+    <div class="pc"><div class="py">2010</div><div class="pn">Galaxy S</div><div class="pd">Super AMOLED, design premium. Rivalidade com iPhone estabelecida. 24 milhões de unidades vendidas.</div></div>
+    <div class="pc"><div class="py">2011</div><div class="pn">Galaxy Note</div><div class="pd">5,3". Criou a categoria "phablet". Todos riram — depois todos copiaram.</div></div>
+  </div>
+</div>
+
+<div id="y2012" class="yb">
+  <div class="yh"><div class="yn">2012–2015</div><div class="ytb"><div class="yt">Maior fabricante de celulares do mundo · TV Curva OLED · Wearables</div><div class="ys">Galaxy S III: o mais popular do mundo · 2013: TV OLED curva · 2014: Galaxy Gear</div></div></div>
+  <div class="ct">
+    <p>Em <strong>2012</strong>, a Samsung se tornou o <strong>maior fabricante de smartphones do mundo</strong> — ultrapassando Nokia e Apple. O Galaxy S III foi um dos celulares mais vendidos da história, com vendas superiores a qualquer iPhone naquele ano. A Samsung também adquiriu a mSpot para entretenimento digital.</p>
+    <p>Em <strong>2013</strong>, a Samsung lançou a primeira <strong>TV OLED curva</strong> do mundo — tecnologia de tela que até então parecia ficção científica. O Galaxy S4 foi o primeiro celular do mundo com rastreamento ocular. Em <strong>2014</strong>, o <strong>Galaxy Gear</strong> iniciou a era dos smartwatches Samsung. Em 2015, o Galaxy S6 introduziu vidro Gorilla Glass 4 dos dois lados — novo padrão de design premium.</p>
+  </div>
+  <div class="pg">
+    <div class="pc"><div class="py">2012</div><div class="pn">Galaxy S III</div><div class="pd">O smartphone mais vendido do mundo em 2012. A Samsung supera Apple e Nokia. Verdadeiro rei do mercado.</div></div>
+    <div class="pc"><div class="py">2013</div><div class="pn">TV OLED Curva</div><div class="pd">Primeira TV OLED curva do mundo. Design que parecia impossível. Início da era do display premium extremo.</div></div>
+    <div class="pc"><div class="py">2014</div><div class="pn">Galaxy Gear</div><div class="pd">Primeiro smartwatch Samsung. Abre uma categoria que cresceria explosivamente nos anos seguintes.</div></div>
+  </div>
+</div>
+
+<div id="y2016" class="yb">
+  <div class="yh"><div class="yn">2016</div><div class="ytb"><div class="yt">Galaxy Note 7 — O maior desastre de produto da história Samsung</div><div class="ys">Baterias explodindo · Banido em aviões · Recall de 2,5 milhões de unidades</div></div></div>
+  <div class="ct">
+    <p>O <strong>Galaxy Note 7</strong> (lançado em agosto de 2016) foi o maior pesadelo da Samsung. Relatórios de baterias <strong>pegando fogo e explodindo</strong> se multiplicaram globalmente. A Samsung fez um primeiro recall, substituiu aparelhos — mas os substitutos também pegavam fogo. O Note 7 foi <strong>banido em todos os voos comerciais</strong> ao redor do mundo. A Samsung anunciou a <strong>descontinuação definitiva</strong> em outubro de 2016 e emitiu um recall global de <strong>2,5 milhões de unidades</strong>. O custo estimado: mais de <strong>US$ 5 bilhões</strong> em perdas diretas.</p>
+    <p>A investigação concluiu que o design da bateria havia sido comprimido em excesso para caber num corpo mais fino — um erro de engenharia que passou pelos filtros de qualidade. A pressão por lançar antes do iPhone 7 foi apontada como fator agravante.</p>
+  </div>
+  <div class="bx bx-f"><div class="bl">✗ O Maior Fracasso de Produto da Samsung</div><p>O Note 7 custou à Samsung mais de US$ 5 bilhões, sua reputação de segurança e meses de liderança de mercado. A Apple aproveitou o vácuo para vender mais iPhones. Mas a Samsung respondeu com o Galaxy S8 em 2017 — considerado por críticos como o design mais elegante de smartphone até aquele ponto — e retomou rapidamente o terreno perdido. A crise mostrou que até a Samsung pode falhar gravemente sob pressão de mercado.</p></div>
+</div>
+
+<!-- ===== ERA VIII ===== -->
+<div id="era8" class="era-div">
+  <span class="era-label">Era VIII · 2019–2026</span>
+  <div class="era-title">A Era Dobrável e o Boom da IA</div>
+</div>
+
+<div id="y2019" class="yb">
+  <div class="yh"><div class="yn">2019–2022</div><div class="ytb"><div class="yt">Galaxy Fold — A aposta na dobragem que definiu uma era</div><div class="ys">Set 2019: Primeiro foldable · 5G · Pandemia · Galaxy Z series</div></div></div>
+  <div class="ct">
+    <p>Em <strong>setembro de 2019</strong>, a Samsung lançou o <strong>Galaxy Fold</strong> — o primeiro smartphone dobrável do mundo em produção comercial. O lançamento inicial foi problemático: telas quebrando após poucos dias de uso, gerando críticas severas. A Samsung adiou o lançamento, corrigiu o design e relançou em setembro — com mais sucesso. O Galaxy Fold custava US$ 1.980 e vendeu mais de 1 milhão de unidades no primeiro ano.</p>
+    <p>Em <strong>2020</strong>, o <strong>Galaxy Z Flip</strong> trouxe o conceito de dobragem vertical (como os antigos flip phones) com tecnologia moderna — tela de vidro ultrafino (UTG). A pandemia de COVID-19 perturbou cadeias de suprimentos globais, mas a demanda por chips explodiu com o trabalho e estudo em casa. Em <strong>2021</strong>, o Galaxy Z Fold 3 foi o primeiro foldable com resistência a água (IPX8). Em <strong>2022</strong>, o Galaxy Z Fold 4 e Z Flip 4 consolidaram os dobráveis como categoria real.</p>
+  </div>
+  <div class="pg">
+    <div class="pc"><div class="py">SET 2019</div><div class="pn">Galaxy Fold</div><div class="pd">Primeiro foldable comercial. 7,3" aberto. US$ 1.980. Revolucionou o conceito de fator de forma dos celulares.</div></div>
+    <div class="pc"><div class="py">2020</div><div class="pn">Galaxy Z Flip</div><div class="pd">Dobragem vertical, vidro ultrafino. Popularizou os dobráveis entre consumidores fora do segmento ultra-premium.</div></div>
+    <div class="pc"><div class="py">2021</div><div class="pn">Galaxy Z Fold 3</div><div class="pd">Primeiro dobrável resistente a água (IPX8). S Pen integrada. 2,5 milhões de unidades vendidas.</div></div>
+  </div>
+</div>
+
+<div id="y2023" class="yb">
+  <div class="yh"><div class="yn">2023–2026</div><div class="ytb"><div class="yt">Galaxy AI, chips 3nm e 2nm, recordes de receita e o boom da IA</div><div class="ys">HBM · AI Factory com NVIDIA · US$ 73 bilhões investidos em semicondutores</div></div></div>
+  <div class="ct">
+    <p>Em <strong>2023</strong>, a Samsung iniciou a produção em massa de chips de <strong>3 nanômetros</strong> com tecnologia Gate-All-Around (GAA) — antes mesmo da TSMC nessa tecnologia. Em <strong>2024</strong>, o <strong>Galaxy S24</strong> foi o primeiro smartphone da Samsung com Galaxy AI integrado nativamente, com funcionalidades de tradução em tempo real e resumo de texto por IA.</p>
+    <p>Em <strong>outubro de 2025</strong>, a Samsung e a NVIDIA anunciaram a construção de uma <strong>AI Factory</strong> — uma fábrica de semicondutores alimentada por mais de <strong>50.000 GPUs NVIDIA</strong>, aplicando IA diretamente no processo de fabricação de chips. Em <strong>2025</strong>, a Samsung fechou o ano com receita recorde de <strong>KRW 333,6 trilhões</strong> e lucro operacional de KRW 43,6 trilhões.</p>
+    <p>Em <strong>março de 2026</strong>, a Samsung anunciou um investimento de <strong>US$ 73 bilhões em semicondutores</strong> ao longo do ano, incluindo a fábrica de <strong>US$ 37 bilhões em Taylor, Texas</strong> (EUA), com produção em processo de <strong>2 nanômetros</strong>. O mercado de HBM (High Bandwidth Memory) — memória essencial para GPUs de IA — explodiu: <strong>70% de crescimento projetado em 2026</strong>. Em Q1 2026, a Samsung registrou receita de KRW 133,9 trilhões — com lucro operacional de KRW 53,7 trilhões, o maior da história.</p>
+  </div>
+  <div class="evs">
+    <div class="ev"><div class="ed">2023</div><div class="et"><strong>Chips 3nm GAA</strong> em produção — Samsung usa tecnologia Gate-All-Around antes da TSMC nessa geração.</div></div>
+    <div class="ev"><div class="ed">JAN 2024</div><div class="et"><strong>Galaxy S24 com Galaxy AI</strong> — primeiro smartphone Samsung com IA generativa nativa. Tradução em tempo real, Circle to Search, AI Resumo.</div></div>
+    <div class="ev"><div class="ed">OUT 2025</div><div class="et"><strong>AI Factory Samsung + NVIDIA</strong> anunciada — 50.000 GPUs NVIDIA para fabricar chips com IA. 20x mais eficiência em litografia computacional.</div></div>
+    <div class="ev"><div class="ed">JAN 2026</div><div class="et">Receita recorde Q4 2025: <strong>KRW 93,8 trilhões</strong>. Chips HBM para IA impulsionam resultados históricos.</div></div>
+    <div class="ev"><div class="ed">MAR 2026</div><div class="et">Anúncio de investimento de <strong>US$ 73 bilhões em semicondutores</strong> para 2026, incluindo fábrica 2nm em Taylor, Texas.</div></div>
+    <div class="ev"><div class="ed">MAI 2026</div><div class="et">Q1 2026: receita de <strong>KRW 133,9 trilhões</strong> — maior lucro operacional da história da empresa (KRW 53,7 tri). Samsung passa a ser segunda maior em lucro de chips, atrás só da NVIDIA.</div></div>
+  </div>
+  <div class="bx bx-x"><div class="bl">Situação Atual (Maio 2026)</div><p>A Samsung enfrenta uma concorrência acirrada da TSMC (que domina 69,9% do mercado de fundição de chips, vs ~7% da Samsung), da SK Hynix (líder em HBM para NVIDIA) e de fabricantes chineses de dobráveis. Mas o boom da IA está gerando uma demanda sem precedente por chips de memória HBM — e a Samsung, com sua escala, está bem posicionada para capturar essa onda. A Galaxy Z Fold 7 está prevista para ser revelada em julho de 2026 em Londres.</p></div>
+</div>
+
+<!-- ===== ERA IX — FUTURO ===== -->
+<div class="pred-banner">
+  <strong>A PARTIR DAQUI: PREVISÕES BASEADAS EM TENDÊNCIAS, ROADMAPS PÚBLICOS E ANÁLISE DE ESPECIALISTAS</strong><br>
+  Não são fatos — são projeções fundamentadas. O futuro é incerto, mas os padrões são legíveis.
+</div>
+
+<div id="era9" class="era-div future">
+  <span class="era-label future">Era IX · 2027–2038 ★ PREVISÕES</span>
+  <div class="era-title future">O Próximo Horizonte — Samsung na Era da IA Total</div>
+</div>
+
+<div id="y2027" class="yb">
+  <div class="yh"><div class="yn future">2027–2030</div><div class="ytb"><div class="yt">Chips 1nm, 6G, IA onipresente e o smartphone que desaparece</div><div class="ys">★ PREVISÃO FUNDAMENTADA</div></div></div>
+  <div class="ct">
+    <p>A Samsung tem roadmaps públicos para chips de <strong>2nm (2026)</strong> e está desenvolvendo pesquisa em processos abaixo de 2nm. A competição com TSMC por tecnologia de ponta deve culminar, por volta de <strong>2027–2028</strong>, em processos de <strong>1,4nm</strong> e posteriormente aproximando-se do limite físico de <strong>1nm</strong>. Chips abaixo de 1nm exigirão materiais alternativos ao silício — como grafeno, nanotubos de carbono ou materiais 2D — que a Samsung já pesquisa ativamente em seus centros de P&D globais.</p>
+    <p>O <strong>6G</strong>, com velocidades projetadas de 1 Terabit por segundo (1.000x mais rápido que o 5G), deve ser padronizado por volta de <strong>2029–2030</strong>. A Samsung tem uma equipe de P&D de Next Generation Communications trabalhando em infraestrutura 6G desde 2021. A empresa já anunciou que planeja ter infraestrutura 6G pronta para <strong>2030</strong>.</p>
+    <p>Os dobráveis Samsung devem evoluir para formatos de <strong>trifold (três dobras)</strong> em produção em massa — a Samsung já demonstrou o Galaxy G Fold TriFold. Por volta de 2028–2029, é provável que dispositivos dobráveis de tamanho A4 (como um papel de carta) sejam comercialmente viáveis e acessíveis.</p>
+  </div>
+  <div class="evs">
+    <div class="ev"><div class="ed pred">2027</div><div class="et">Chips <strong>1,4nm GAA</strong> em produção — Samsung e TSMC disputam cada fração de nanômetro em ritmo acelerado.</div></div>
+    <div class="ev"><div class="ed pred">2027–28</div><div class="et"><strong>Galaxy TriFold</strong> em produção de massa global — dispositivo com 3 dobras, tela A5 aberta, substituindo tablet e laptop para muitos usuários.</div></div>
+    <div class="ev"><div class="ed pred">2028</div><div class="et"><strong>Galaxy Ring</strong> e wearables de saúde avançados — monitoramento de glicose, pressão arterial e ECG em tempo real sem necessidade de picar o dedo.</div></div>
+    <div class="ev"><div class="ed pred">2029</div><div class="et">Samsung anuncia <strong>chips abaixo de 1nm</strong> em fase de pesquisa avançada, usando materiais além do silício puro.</div></div>
+    <div class="ev"><div class="ed pred">2030</div><div class="et">Infraestrutura <strong>6G Samsung</strong> em fase de implantação comercial — velocidades de 1 Tbps, latência menor que 0,1ms. Todas as fábricas Samsung tornam-se "AI-driven" (anunciado em MWC 2026).</div></div>
+  </div>
+  <div class="bx bx-p"><div class="bl">★ Previsão: O Declínio do Smartphone Como o Conhecemos</div><p>A Samsung já sinaliza que o futuro não é um smartphone retangular com tela maior — é um <strong>ecossistema de dispositivos conectados</strong>: óculos AR/XR, anéis inteligentes, fones com IA, monitores dobráveis, carros conectados. O smartphone pode não "morrer", mas tornar-se mais um nó nessa rede do que o centro dela. A Samsung está posicionada para esse mundo porque já fabrica chips, telas, sensores, memória e sistemas operacionais para todos esses dispositivos.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py pred">~2027</div><div class="pn">Chips 1,4nm</div><div class="pd">Próxima fronteira após o 2nm. Tecnologia GAA de segunda geração. Samsung disputando com TSMC em território de física extrema.</div></div>
+    <div class="pc"><div class="py pred">~2028</div><div class="pn">Galaxy TriFold (massa)</div><div class="pd">Três dobras, tela maior que A5 aberta. Substitui tablet para muitos usuários. US$ 2.500-3.500 inicialmente.</div></div>
+    <div class="pc"><div class="py pred">~2029</div><div class="pn">Galaxy Glasses AR</div><div class="pd">Óculos de realidade aumentada com Galaxy AI integrado. Display OLED Micro diretamente na lente. Parceria com operadoras 6G.</div></div>
+    <div class="pc"><div class="py pred">~2030</div><div class="pn">Chip 1nm (pesquisa)</div><div class="pd">Limite físico do silício sendo ultrapassado. Grafeno, nanotubos de carbono ou materiais 2D como alternativas. P&D intenso já em andamento.</div></div>
+  </div>
+</div>
+
+<div id="y2031" class="yb">
+  <div class="yh"><div class="yn future">2031–2035</div><div class="ytb"><div class="yt">Computação quântica comercial, chips de IA neuromórficos e saúde digital</div><div class="ys">★ PREVISÃO DE LONGO PRAZO</div></div></div>
+  <div class="ct">
+    <p>Por volta de <strong>2031–2035</strong>, a computação quântica deve atingir o ponto de virada para aplicações comerciais relevantes. A McKinsey projeta que 72% dos executivos de tecnologia acreditam que a computação quântica fault-tolerant se tornará comercial até 2035. A Samsung, como maior fabricante de semicondutores do mundo, tem posição estratégica única: chips quânticos exigem fabricação em ambientes criogênicos e materiais especiais que a Samsung já domina parcialmente.</p>
+    <p>Os chips <strong>neuromórficos</strong> — que imitam a estrutura neuronal do cérebro humano em silício — prometem processar dados de IA com 1000x mais eficiência energética que chips convencionais. A Samsung tem pesquisa ativa nessa área. Por volta de 2033–2035, é plausível que smartphones e wearables Samsung usem chips híbridos (silício convencional + neuromórfico) para rodar LLMs (grandes modelos de linguagem) completamente no dispositivo, sem cloud.</p>
+    <p>Na área de <strong>saúde digital</strong>, a Samsung SmartThings Health (plataforma com 360 milhões de usuários em 2026) deve evoluir para um "sistema imunológico digital": monitoramento contínuo de 50+ biomarcadores de saúde, detecção precoce de doenças como diabetes tipo 2, câncer inicial e problemas cardíacos, diretamente no pulso ou no anel.</p>
+  </div>
+  <div class="evs">
+    <div class="ev"><div class="ed pred">2031</div><div class="et"><strong>Samsung Health OS</strong> — sistema operacional de saúde que integra dados de todos os wearables, geladeiras inteligentes e sensores domésticos para monitoramento 24/7.</div></div>
+    <div class="ev"><div class="ed pred">2032</div><div class="et">Primeiros chips <strong>quântico-clássicos híbridos</strong> da Samsung em pesquisa aplicada — computação quântica para criptografia e descoberta de medicamentos.</div></div>
+    <div class="ev"><div class="ed pred">2033</div><div class="et"><strong>LLMs no dispositivo</strong> — smartphones Samsung rodam modelos de linguagem avançados completamente offline, sem latência de cloud, processados por chips neuromórficos integrados.</div></div>
+    <div class="ev"><div class="ed pred">2034</div><div class="et">Samsung anuncia chips de <strong>memória PIM (Processing-in-Memory)</strong> em produção de massa — chips que processam IA diretamente na memória, sem transferência de dados ao processador principal. 10x mais eficientes para IA.</div></div>
+    <div class="ev"><div class="ed pred">2035</div><div class="et">Samsung é projetada para ser uma das empresas mais valiosas do mundo, com receita anual acima de US$ 500 bilhões — se mantiver liderança em chips de IA e memória HBM.</div></div>
+  </div>
+  <div class="bx bx-p"><div class="bl">★ Previsão: A Samsung Como Infraestrutura Invisível do Mundo</div><p>Entre 2030 e 2038, a Samsung pode se tornar a "infraestrutura invisível" da civilização digital — assim como a eletricidade é invisível mas essencial. Seus chips já estão em carros, datacenters, iPhones da Apple (a rival), satélites, servidores de IA. Esse papel de fornecedor universal de componentes críticos pode ser mais valioso — e mais duradouro — do que qualquer produto de consumo específico. A Samsung pode fabricar os chips que rodam a IA que concorre com a Samsung. E lucrar com isso.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py pred">~2032</div><div class="pn">Chip Quântico-Clássico</div><div class="pd">Híbrido que combina qubits quânticos com lógica clássica. Aplicações em criptografia, farmacologia e logística.</div></div>
+    <div class="pc"><div class="py pred">~2033</div><div class="pn">LLM On-Device</div><div class="pd">IA generativa completa no smartphone, sem cloud. Chips neuromórficos Samsung processam GPT-class models localmente.</div></div>
+    <div class="pc"><div class="py pred">~2034</div><div class="pn">Chip PIM (Memória Processadora)</div><div class="pd">Processa dados diretamente na memória — elimina o gargalo de transferência. 10x mais eficiente para cargas de IA.</div></div>
+    <div class="pc"><div class="py pred">~2035</div><div class="pn">Display Neural</div><div class="pd">Telas que ajustam contraste, cor e conteúdo em tempo real baseado no estado emocional e fisiológico do usuário, via sensores biométricos.</div></div>
+  </div>
+</div>
+
+<div class="yb">
+  <div class="yh"><div class="yn future">2036–2038</div><div class="ytb"><div class="yt">100 anos de Samsung — O que vem depois do silício?</div><div class="ys">★ ESPECULAÇÃO VISIONÁRIA · Centenário de 2038</div></div></div>
+  <div class="ct">
+    <p>Em <strong>1 de março de 2038</strong>, a Samsung completa <strong>100 anos</strong>. De uma loja de peixe seco com US$ 25 de capital a (provavelmente) uma das empresas mais valiosas e influentes da história humana. Que empresa será essa?</p>
+    <p>O silício como material base de chips está chegando a seus limites físicos fundamentais. Por volta de 2036–2038, chips baseados em <strong>nanotubos de carbono</strong> (CNTs) ou <strong>materiais 2D como o grafeno</strong> podem começar a transição para produção semi-comercial. A Samsung, com o maior orçamento de P&D de semicondutores do mundo, provavelmente estará na vanguarda dessa transição — ou a liderará.</p>
+    <p>A <strong>computação biológica</strong> — chips baseados em células vivas ou materiais orgânicos — pode deixar de ser ficção científica e entrar em pesquisa aplicada nesse período. A Samsung já tem presença em biotecnologia (Samsung Biologics é líder global em biofarmacêuticos por contrato). A fusão entre chips eletrônicos e biológicos é uma fronteira que a Samsung pode cruzar primeiro.</p>
+    <p>Em 2038, é plausível que a Samsung opere <strong>fábricas de chips totalmente autônomas</strong> — sem trabalhadores humanos no chão de fábrica, guiadas por IA, com robôs fabricando robôs fabricando chips que alimentam IA que melhora os robôs. Um ciclo de melhoria contínua que seria o legado final do homem que em 1938 vendia peixe seco em Daegu.</p>
+  </div>
+  <div class="bx bx-p"><div class="bl">★ Visão Centenária — 2038</div><p>Em 100 anos, a Samsung terá sobrevivido a: uma guerra colonial, uma guerra devastadora, escândalos de corrupção, a crise asiática, o colapso de categorias inteiras de produtos, o surgimento de concorrentes na China, três gerações de liderança familiar e múltiplas revoluções tecnológicas. A resiliência da Samsung não é acidente — é arquitetada. Lee Byung-chul construiu um conglomerado que poderia sobreviver ao fracasso de qualquer divisão individual, porque sempre havia outra crescendo. Essa arquitetura de resiliência — diversificação profunda + integração vertical + ritmo acelerado de inovação — é o DNA centenário que o empresa carrega desde a loja de peixe seco de 1938.</p></div>
+  <div class="pg">
+    <div class="pc"><div class="py pred">~2036</div><div class="pn">Chip de Carbono Comercial</div><div class="pd">Nanotubo de carbono substituindo parcialmente o silício. Velocidade 5x maior, consumo 50% menor. Samsung na vanguarda.</div></div>
+    <div class="pc"><div class="py pred">~2037</div><div class="pn">Fábrica Totalmente Autônoma</div><div class="pd">Chão de fábrica 100% robótico e gerenciado por IA. Sem operadores humanos na linha de produção. Eficiência 24/7/365.</div></div>
+    <div class="pc"><div class="py pred">1 MAR 2038</div><div class="pn">★ 100 Anos de Samsung</div><div class="pd">De US$ 25 e peixe seco a uma das empresas mais influentes da história humana. Um século de transformação tecnológica.</div></div>
+  </div>
+</div>
+
+<!-- TIMELINE COMPLETA -->
+<div class="tl">
+  <h3>Linha do Tempo Completa — 1938 a 2038</h3>
+
+  <div class="ti"><div class="ty">1938</div><div class="tdot"></div><div class="td">Fundação da Samsung Sanghoe em Daegu — comércio de peixe seco, 40 funcionários, US$ 25 de capital</div></div>
+  <div class="ti"><div class="ty">1939–45</div><div class="tdot"></div><div class="td">Sobrevivência sob ocupação japonesa e Segunda Guerra Mundial</div></div>
+  <div class="ti"><div class="ty">1947</div><div class="tdot"></div><div class="td">Sede vai a Seul · Samsung Mulsan Gongsa com Cho Hong-jai (futuro Grupo Hyosung)</div></div>
+  <div class="ti"><div class="ty">1950–53</div><div class="tdot"></div><div class="td">Guerra da Coreia — fuga de Seul, reestabelecimento em Busan, crescimento por demanda de guerra</div></div>
+  <div class="ti"><div class="ty">1953</div><div class="tdot"></div><div class="td">Cheil Sugar — PRIMEIRA refinaria de açúcar da Coreia do Sul</div></div>
+  <div class="ti"><div class="ty">1954</div><div class="tdot"></div><div class="td">Cheil Mojik — maior tecelagem de lã do país. Integração vertical total.</div></div>
+  <div class="ti"><div class="ty">1958–59</div><div class="tdot"></div><div class="td">Ankuk Fire & Marine Insurance · Controle de 3 bancos comerciais · Cimento e fertilizantes</div></div>
+  <div class="ti"><div class="ty">1961</div><div class="tdot"></div><div class="td">Golpe Park Chung-hee — acordo histórico: Samsung entrega bancos, ganha apoio para crescer</div></div>
+  <div class="ti"><div class="ty">1963–65</div><div class="tdot"></div><div class="td">DongBang Life Insurance · Shinsegae (preço fixo) · TBC emissora · Petróleo e nylon</div></div>
+  <div class="ti"><div class="ty">1966</div><div class="tdot"></div><div class="td">ESCÂNDALO DA SACARINA — 55 ton contrabandeadas, demissão de Lee, filho preso, crise de sucessão</div></div>
+  <div class="ti"><div class="ty">13 JAN 1969</div><div class="tdot"></div><div class="td">FUNDAÇÃO DA SAMSUNG ELECTRONICS em Suwon · 4 divisões criadas · JV Samsung-Sanyo</div></div>
+  <div class="ti"><div class="ty">NOV 1970</div><div class="tdot"></div><div class="td">Primeiro TV Samsung (12", tubo de vácuo, P&B) produzido em Suwon</div></div>
+  <div class="ti"><div class="ty">JAN 1971</div><div class="tdot"></div><div class="td">500 TVs exportadas para o Panamá — primeira exportação eletrônica internacional</div></div>
+  <div class="ti"><div class="ty">ABR 1973</div><div class="tdot"></div><div class="td">TV Maha 506 (19", transistorizada) — primeiro sucesso comercial eletrônico genuíno</div></div>
+  <div class="ti"><div class="ty">FEV 1974</div><div class="tdot"></div><div class="td">Geladeira SR-180 (frost-free) · Ar-condicionados · 1M de TVs produzidas</div></div>
+  <div class="ti"><div class="ty">AGO 1974</div><div class="tdot"></div><div class="td">50% da Korea Semiconductor adquirida — ENTRADA NO MERCADO DE CHIPS · Samsung Heavy Industries fundada</div></div>
+  <div class="ti"><div class="ty">1977</div><div class="tdot"></div><div class="td">TVs coloridas · Samsung Construction · Desenvolvimento de micro-ondas · 1M de TVs P&B</div></div>
+  <div class="ti"><div class="ty">1978</div><div class="tdot"></div><div class="td">4 MILHÕES de TVs em 1 ano — recorde mundial · Samsung Semiconductor separada · Divisão aeroespacial</div></div>
+  <div class="ti"><div class="ty">1979</div><div class="tdot"></div><div class="td">Produção em massa de micro-ondas — conquista mercado americano com preços agressivos</div></div>
+  <div class="ti"><div class="ty">1982</div><div class="tdot"></div><div class="td">SPC-1000 (1º PC coreano) · Fábrica em Portugal · Licença DRAM 64K da Micron</div></div>
+  <div class="ti"><div class="ty">DEZ 1983</div><div class="tdot"></div><div class="td">DRAM 64K — 3º do mundo em chips (após EUA e Japão). Gap tecnológico: de 10 anos para 3.</div></div>
+  <div class="ti"><div class="ty">1984</div><div class="tdot"></div><div class="td">DRAM 256K em apenas 3 meses após o 64K — ritmo de inovação sem precedente</div></div>
+  <div class="ti"><div class="ty">1986</div><div class="tdot"></div><div class="td">DRAM 1 Megabit — 3ª empresa do mundo nessa conquista</div></div>
+  <div class="ti"><div class="ty">NOV 1987</div><div class="tdot"></div><div class="td">Morte de Lee Byung-chul · Lee Kun-hee assume · Receita: US$ 24 bilhões (20% do PIB coreano)</div></div>
+  <div class="ti"><div class="ty">1988</div><div class="tdot"></div><div class="td">SH-100 — primeiro celular Samsung (analógico, para carro) · Samsung no patrocínio das Olimpíadas de Seul</div></div>
+  <div class="ti"><div class="ty">1992</div><div class="tdot"></div><div class="td">Samsung = MAIOR PRODUTOR MUNDIAL de chips de memória — ultrapassou Japão e EUA</div></div>
+  <div class="ti"><div class="ty">7 JUN 1993</div><div class="tdot"></div><div class="td">"NOVA GESTÃO" em Frankfurt — "Mude tudo, exceto sua esposa e filhos." Revolução de qualidade.</div></div>
+  <div class="ti"><div class="ty">MAR 1995</div><div class="tdot"></div><div class="td">QUEIMA DOS CELULARES — 150.000 Anycall destruídos (US$ 44M) na fábrica de Gumi na frente de 2.000 funcionários</div></div>
+  <div class="ti"><div class="ty">1995</div><div class="tdot"></div><div class="td">Samsung Motors fundada (planta em Busan) · Primeira tela LCD Samsung</div></div>
+  <div class="ti"><div class="ty">1997–98</div><div class="tdot"></div><div class="td">Crise Asiática · Samsung Motors vai à falência · DRAM 64Mb · Primeira TV Digital do mundo</div></div>
+  <div class="ti"><div class="ty">2000</div><div class="tdot"></div><div class="td">Samsung Motors vendida para Renault · Líder mundial em DRAM · Patrocinadora dos Jogos Olímpicos de Sydney</div></div>
+  <div class="ti"><div class="ty">2003</div><div class="tdot"></div><div class="td">Primeiro celular com MP3 do mundo · Samsung Ventures investe em startups</div></div>
+  <div class="ti"><div class="ty">2004</div><div class="tdot"></div><div class="td">Maior TV LCD do mundo (46") · NAND Flash: líder em memória Flash</div></div>
+  <div class="ti"><div class="ty">2006</div><div class="tdot"></div><div class="td">MAIOR FABRICANTE DE TVS DO MUNDO — posto mantido ininterruptamente até hoje</div></div>
+  <div class="ti"><div class="ty">2009</div><div class="tdot"></div><div class="td">Samsung Galaxy i7500 — PRIMEIRO SMARTPHONE ANDROID Samsung</div></div>
+  <div class="ti"><div class="ty">2010</div><div class="tdot"></div><div class="td">Galaxy S com Super AMOLED — rivalidade com iPhone estabelecida globalmente</div></div>
+  <div class="ti"><div class="ty">2011</div><div class="tdot"></div><div class="td">Galaxy S II + Galaxy Note (cria categoria "phablet") · Galaxy S III: mais vendido do mundo</div></div>
+  <div class="ti"><div class="ty">2012</div><div class="tdot"></div><div class="td">MAIOR FABRICANTE DE SMARTPHONES DO MUNDO — ultrapassa Nokia e Apple</div></div>
+  <div class="ti"><div class="ty">2013</div><div class="tdot"></div><div class="td">Primeira TV OLED curva do mundo · Galaxy S4 com rastreamento ocular</div></div>
+  <div class="ti"><div class="ty">2016</div><div class="tdot"></div><div class="td">GALAXY NOTE 7 — desastre global. Baterias explodindo. Banido em aviões. US$ 5B de prejuízo.</div></div>
+  <div class="ti"><div class="ty">SET 2019</div><div class="tdot"></div><div class="td">GALAXY FOLD — primeiro smartphone dobrável comercial do mundo</div></div>
+  <div class="ti"><div class="ty">2021</div><div class="tdot"></div><div class="td">Produção em massa de chips 3nm começa · Galaxy Z Fold 3: resistência à água</div></div>
+  <div class="ti"><div class="ty">JAN 2024</div><div class="tdot"></div><div class="td">Galaxy S24 com Galaxy AI — IA generativa nativa no smartphone</div></div>
+  <div class="ti"><div class="ty">OUT 2025</div><div class="tdot"></div><div class="td">AI Factory com NVIDIA anunciada — 50.000 GPUs para fabricar chips com IA</div></div>
+  <div class="ti"><div class="ty">2026</div><div class="tdot"></div><div class="td">US$ 73 bilhões investidos em chips · Fábrica 2nm em Taylor, Texas · Recordes históricos de receita</div></div>
+
+  <div class="ti"><div class="ty future">~2027</div><div class="tdot future"></div><div class="td">★ PREV: Chips 1,4nm · Galaxy TriFold em massa · 6G em desenvolvimento avançado</div></div>
+  <div class="ti"><div class="ty future">~2028</div><div class="tdot future"></div><div class="td">★ PREV: Galaxy Ring com monitamento de saúde avançado · Óculos AR Samsung em beta</div></div>
+  <div class="ti"><div class="ty future">~2029</div><div class="tdot future"></div><div class="td">★ PREV: Chips abaixo de 1nm em pesquisa · 6G comercial em fase piloto · Galaxy Glasses AR</div></div>
+  <div class="ti"><div class="ty future">~2030</div><div class="tdot future"></div><div class="td">★ PREV: 6G lançado comercialmente · Fábricas Samsung 100% AI-driven · Chips de grafeno em laboratório</div></div>
+  <div class="ti"><div class="ty pred">~2032</div><div class="tdot pred"></div><div class="td">★ PREV: Chips quântico-clássicos híbridos em pesquisa aplicada · Health OS com 50+ biomarcadores</div></div>
+  <div class="ti"><div class="ty pred">~2033</div><div class="tdot pred"></div><div class="td">★ PREV: LLMs completos rodando offline em smartphones Samsung via chips neuromórficos</div></div>
+  <div class="ti"><div class="ty pred">~2034</div><div class="tdot pred"></div><div class="td">★ PREV: Chips PIM (Processing-in-Memory) em produção de massa — 10x mais eficientes para IA</div></div>
+  <div class="ti"><div class="ty pred">~2036</div><div class="tdot pred"></div><div class="td">★ PREV: Primeiros chips de carbono (CNT) em produção semi-comercial — fim da era do silício puro</div></div>
+  <div class="ti"><div class="ty pred">~2037</div><div class="tdot pred"></div><div class="td">★ PREV: Fábricas Samsung totalmente autônomas — sem humanos no chão de fábrica</div></div>
+  <div class="ti"><div class="ty pred">1 MAR 2038</div><div class="tdot pred"></div><div class="td">★ CENTENÁRIO DA SAMSUNG — 100 anos. De US$ 25 e peixe seco ao futuro da computação humana.</div></div>
+</div>
+
+<!-- FALHAS E APOSTAS QUE NÃO DERAM CERTO -->
+<div class="era-div">
+  <span class="era-label">Análise Crítica</span>
+  <div class="era-title">Fracassos, Escândalos e Apostas que Não Vingaram</div>
+</div>
+
+<div class="yb">
+  <div class="ct">
+    <div class="bx bx-f" style="margin-left:0;margin-top:0;"><div class="bl">✗ TBC (1964–1980) — Emissora confiscada pelo estado</div><p>Lee Byung-chul fundou a TBC (Tongyang Broadcasting) em 1964, que operou com sucesso por 16 anos. Em 1980, o governo militar de Chun Doo-hwan forçou a fusão de todas as emissoras privadas na KBS estatal. A TBC foi absorvida sem compensação justa. Perda de um ativo estratégico de mídia que poderia ter sido tão influente quanto um canal nacional hoje.</p></div>
+    <div class="bx bx-f" style="margin-left:0;"><div class="bl">✗ Bancos Comerciais (1958–1961) — Devolvidos ao Estado</div><p>A Samsung controlou 3 dos maiores bancos coreanos no final dos anos 1950 — fonte de financiamento privilegiado. Em 1961, Park Chung-hee os devolveu ao controle estatal como parte do "acordo anticorrupção". Samsung perdeu uma alavanca financeira que nunca mais recuperou com a mesma profundidade.</p></div>
+    <div class="bx bx-f" style="margin-left:0;"><div class="bl">✗ Sacarina (1966) — Contrabando que custou uma usina</div><p>55 toneladas de sacarina contrabandeadas resultaram em: Lee Byung-chul se demitindo, filho preso, 51% da usina de uréia cedida ao governo (uma das maiores do mundo), e ruptura permanente da linha de sucessão familiar. O segundo filho nunca voltou ao comando; o terceiro filho tornou-se sucessor — Lee Kun-hee.</p></div>
+    <div class="bx bx-f" style="margin-left:0;"><div class="bl">✗ Samsung Motors (1995–2000) — A aventura automotiva que destruiu bilhões</div><p>Lee Kun-hee quis ser Henry Ford coreano. A Samsung Motors foi construída com uma planta moderna em Busan e o modelo SM5. Mas a empresa perdia 1,5 milhão de wons por carro produzido, não tinha DNA automotivo, e foi esmagada pela crise asiática de 1997. A Renault comprou os restos em 2000. Lee cedeu 3,5 milhões de ações de sua coleção pessoal para compensar credores.</p></div>
+    <div class="bx bx-f" style="margin-left:0;"><div class="bl">✗ Galaxy Note 7 (2016) — O maior recall da indústria de smartphones</div><p>Design de bateria comprimida ao limite + pressão para lançar antes do iPhone 7 = 150.000 telefones pegando fogo, banimento em voos globais, recall de 2,5 milhões de unidades e US$ 5 bilhões em prejuízo direto. A Samsung respondeu com o Galaxy S8 (2017) — um dos mais belos designs de smartphone da época — e recuperou terreno rapidamente. Mas o Note 7 é o lembrete permanente de que até a maior empresa de eletrônicos do mundo pode falhar gravemente sob pressão de mercado.</p></div>
+    <div class="bx bx-f" style="margin-left:0;"><div class="bl">✗ HBM vs SK Hynix (2024–2026) — Atraso no chip mais crítico da era da IA</div><p>A Samsung foi a pioneira em High Bandwidth Memory (HBM) — mas quando a demanda explodiu com os GPUs de IA da NVIDIA, a rival SK Hynix foi mais rápida em qualificar seus chips HBM3 e HBM4 para os sistemas da NVIDIA. A Samsung chegou atrasada, com chips que levaram mais tempo para ser aprovados pela NVIDIA. Isso custou bilhões em contratos. Em Q1 2026, a Samsung estava finalmente qualificando seu HBM3E para GPUs Blackwell da NVIDIA — mas a SK Hynix largou na frente.</p></div>
+  </div>
+</div>
+
+<!-- FONTES -->
+<div class="srcs">
+  <h2>Fontes e Leituras Complementares</h2>
+  <ul>
+    <li>📰 <strong>Britannica Money</strong> — Samsung, perfil completo:<br><a href="https://www.britannica.com/money/Samsung-Electronics">britannica.com/money/Samsung-Electronics</a></li>
+    <li>📰 <strong>Quartr Insights</strong> — Lee Byung-chul, o fundador visionário:<br><a href="https://quartr.com/insights/business-philosophy/lee-byung-chul-samsungs-visionary-founder">quartr.com — Lee Byung-chul</a></li>
+    <li>📰 <strong>inKorea.it</strong> — História completa e marcos:<br><a href="https://www.incorea.it/en/history-of-samsung/">incorea.it/en/history-of-samsung/</a></li>
+    <li>📰 <strong>Samsung Global Newsroom</strong> — Histórias de produtos e marcos:<br><a href="https://news.samsung.com/global/the-history-of-samsung-electronics-2-diversification-and-expansion-19711974">news.samsung.com</a></li>
+    <li>📰 <strong>FundingUniverse</strong> — Histórico detalhado da Samsung Electronics:<br><a href="https://www.fundinguniverse.com/company-histories/samsung-electronics-co-ltd-history/">fundinguniverse.com — Samsung Electronics history</a></li>
+    <li>📰 <strong>Facts and Details</strong> — História dos chaebols e Samsung:<br><a href="https://factsanddetails.com/korea/South_Korea/Chaebols_and_Samsung/entry-7405.html">factsanddetails.com</a></li>
+    <li>📰 <strong>Korea Herald</strong> — Lee Kun-hee, a "Nova Gestão" e o legado:<br><a href="https://www.koreaherald.com/article/2462137">koreaherald.com</a></li>
+    <li>📰 <strong>KED Global</strong> — A queima dos celulares e a filosofia de Lee Kun-hee:<br><a href="https://www.kedglobal.com/lee-kun-hee-s-legacy/newsView/ked202010260003">kedglobal.com</a></li>
+    <li>📰 <strong>Commoncog Case Library</strong> — Sucessão na Samsung (análise profunda):<br><a href="https://commoncog.com/c/cases/samsung-succession/">commoncog.com — Samsung Succession</a></li>
+    <li>📰 <strong>The Cecily Group</strong> — Estudo de caso da sucessão Samsung:<br><a href="https://thececilygroup.com/blog/a-case-study-the-samsung-succession/">thececilygroup.com</a></li>
+    <li>📰 <strong>Samsung Newsroom</strong> — Parceria NVIDIA × Samsung AI Factory:<br><a href="https://nvidianews.nvidia.com/news/samsung-ai-factory">nvidianews.nvidia.com/news/samsung-ai-factory</a></li>
+    <li>📰 <strong>Sammy Fans</strong> — Receita recorde 2025 e HBM4:<br><a href="https://www.sammyfans.com/2026/01/28/samsung-closes-2025-with-record-revenue/">sammyfans.com</a></li>
+    <li>📰 <strong>Korea Herald</strong> — Estratégia Samsung 2026, IA e chips:<br><a href="https://www.koreaherald.com/article/10637689">koreaherald.com — Samsung 2026 strategy</a></li>
+    <li>📰 <strong>Tech-Insider</strong> — Samsung US$ 73B em semicondutores:<br><a href="https://tech-insider.org/samsung-73-billion-semiconductor-investment-2026/">tech-insider.org</a></li>
+    <li>📰 <strong>Retail Relates (Substack)</strong> — A abertura da primeira loja em 1938:<br><a href="https://retailrelates.substack.com/p/march-1-1938-lee-byung-chul-opens">retailrelates.substack.com</a></li>
+    <li>📰 <strong>Wikipedia — Samsung Electronics</strong>:<br><a href="https://en.wikipedia.org/wiki/Samsung_Electronics">en.wikipedia.org/wiki/Samsung_Electronics</a></li>
+    <li>📰 <strong>Wikipedia — Samsung Galaxy Z series</strong>:<br><a href="https://en.wikipedia.org/wiki/Samsung_Galaxy_Z_series">en.wikipedia.org/wiki/Samsung_Galaxy_Z_series</a></li>
+    <li>📰 <strong>Klover AI</strong> — Estratégia de IA da Samsung:<br><a href="https://www.klover.ai/samsung-ai-strategy-dominance-semiconductor-consumer-devices-ai-software/">klover.ai — Samsung AI Strategy</a></li>
+  </ul>
+</div>
+
+<footer>
+  Samsung: A História Centenária 1938–2038 · Documento de pesquisa elaborado com base em fontes primárias, secundárias e projeções de especialistas · As previsões 2027–2038 são especulativas e baseadas em tendências e roadmaps públicos disponíveis em maio de 2026 · Todos os direitos de marcas são de seus respectivos proprietários.
+</footer>
+
+</body>
+</html>
